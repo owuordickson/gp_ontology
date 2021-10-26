@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/sample"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/sample">
+    <Prefix name="" IRI="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/sample"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Course"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GraduateStudent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lecturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Professor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UndergraduateStudent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#University"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#admits"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#employs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#learns"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#lectures"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDebt"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHours"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#joinedOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#staffID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#studentID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Anne"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dickson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#French"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Konni"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Natasha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Programming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Strathmore"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Lecturer"/>
+        <Class IRI="#Professor"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#GraduateStudent"/>
+        <Class IRI="#Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lecturer"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Professor"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Student"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UndergraduateStudent"/>
+        <Class IRI="#Student"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Professor"/>
+        <Class IRI="#Student"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Professor"/>
+        <NamedIndividual IRI="#Anne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lecturer"/>
+        <NamedIndividual IRI="#Dickson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Professor"/>
+        <NamedIndividual IRI="#Dickson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#French"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#Konni"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UndergraduateStudent"/>
+        <NamedIndividual IRI="#Konni"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GraduateStudent"/>
+        <NamedIndividual IRI="#Natasha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#Natasha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#Programming"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#University"/>
+        <NamedIndividual IRI="#Strathmore"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#lectures"/>
+        <NamedIndividual IRI="#Anne"/>
+        <NamedIndividual IRI="#French"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#lectures"/>
+        <NamedIndividual IRI="#Dickson"/>
+        <NamedIndividual IRI="#Programming"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#learns"/>
+        <NamedIndividual IRI="#Konni"/>
+        <NamedIndividual IRI="#Programming"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#learns"/>
+        <NamedIndividual IRI="#Natasha"/>
+        <NamedIndividual IRI="#French"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#admits"/>
+        <NamedIndividual IRI="#Strathmore"/>
+        <NamedIndividual IRI="#Konni"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#admits"/>
+        <NamedIndividual IRI="#Strathmore"/>
+        <NamedIndividual IRI="#Natasha"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#Anne"/>
+        <Literal>Female</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#staffID"/>
+        <NamedIndividual IRI="#Anne"/>
+        <Literal>1860</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#Dickson"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#staffID"/>
+        <NamedIndividual IRI="#Dickson"/>
+        <Literal>1880</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHours"/>
+        <NamedIndividual IRI="#French"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDebt"/>
+        <NamedIndividual IRI="#Konni"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5000.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#Konni"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#studentID"/>
+        <NamedIndividual IRI="#Konni"/>
+        <Literal>001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDebt"/>
+        <NamedIndividual IRI="#Natasha"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">6400.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#Natasha"/>
+        <Literal>Female</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#studentID"/>
+        <NamedIndividual IRI="#Natasha"/>
+        <Literal>002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHours"/>
+        <NamedIndividual IRI="#Programming"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">45</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#admits"/>
+        <Class IRI="#University"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#employs"/>
+        <Class IRI="#University"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#learns"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#lectures"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#admits"/>
+        <Class IRI="#Student"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#employs"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#learns"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#lectures"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDebt"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasGender"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasHours"/>
+        <Class IRI="#Course"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#joinedOn"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#staffID"/>
+        <Class IRI="#Professor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#studentID"/>
+        <Class IRI="#Student"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDebt"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasGender"/>
+        <DataOneOf>
+            <Literal>Female</Literal>
+            <Literal>Male</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHours"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#joinedOn"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#staffID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#studentID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Dickson</IRI>
+        <Literal>teaches programming course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Professor</IRI>
+        <Literal>teaches a course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Student</IRI>
+        <Literal>learns a course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#University</IRI>
+        <Literal>university admits students</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
