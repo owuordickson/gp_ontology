@@ -1,2 +1,2 @@
-# gp_ontology
+# GP ontology
 Ontology for gradual patterns
