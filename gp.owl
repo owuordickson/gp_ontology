@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#"
+     xml:base="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp"
+     xmlns:gp="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#forms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#forms">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isFormedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasItem">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isItemOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasItem"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isFormedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isFormedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isItemOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isItemOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupport"/>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGI -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGI">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGP"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGP">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasVariation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasVariation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Decreases</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Increases</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute"/>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A- -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A-">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A"/>
+        <hasSupportGI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6</hasSupportGI>
+        <hasVariation>Decreases</hasVariation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B- -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B"/>
+        <hasSupportGI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hasSupportGI>
+        <hasVariation>Decreases</hasVariation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A"/>
+        <hasSupportGI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.75</hasSupportGI>
+        <hasVariation>Increases</hasVariation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B- -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern"/>
+        <isFormedBy rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A-"/>
+        <isFormedBy rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-"/>
+        <isFormedBy rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+"/>
+        <hasSupportGP rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</hasSupportGP>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+">
+        <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B"/>
+        <hasSupportGI rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</hasSupportGI>
+        <hasVariation>Increases</hasVariation>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
