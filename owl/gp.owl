@@ -15,9 +15,7 @@
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#composedOf
 gp:composedOf rdf:type owl:ObjectProperty ;
-              owl:inverseOf gp:isPartOf ;
-              rdfs:domain gp:Gradual_Pattern ;
-              rdfs:range gp:Gradual_Item .
+              owl:inverseOf gp:isPartOf .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasItem
@@ -29,30 +27,24 @@ gp:hasItem rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasVariation
-gp:hasVariation rdf:type owl:ObjectProperty ,
-                         owl:FunctionalProperty ;
-                rdfs:domain gp:Gradual_Item ;
-                rdfs:range gp:Variation .
+gp:hasVariation rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isItemOf
 gp:isItemOf rdf:type owl:ObjectProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain gp:Gradual_Item ;
-            rdfs:range gp:Attribute .
+            rdfs:range gp:Attribute ;
+            rdfs:comment "Functional property: prevents a GI instance to be an item of 2 (or more) attributes" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isPartOf
-gp:isPartOf rdf:type owl:ObjectProperty ;
-            rdfs:domain gp:Gradual_Item ;
-            rdfs:range gp:Gradual_Pattern .
+gp:isPartOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#isRelatedTo
 gp:isRelatedTo rdf:type owl:ObjectProperty ,
-                        owl:TransitiveProperty ;
-               rdfs:domain gp:Gradual_Pattern ;
-               rdfs:range gp:Gradual_Pattern .
+                        owl:TransitiveProperty .
 
 
 #################################################################
@@ -74,7 +66,6 @@ gp:hasSupportGI rdf:type owl:DatatypeProperty ;
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGP
 gp:hasSupportGP rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf gp:hasSupport ;
-                rdfs:domain gp:Gradual_Pattern ;
                 rdfs:range xsd:float .
 
 
@@ -84,7 +75,18 @@ gp:hasSupportGP rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute
 gp:Attribute rdf:type owl:Class ;
-             owl:disjointWith gp:Variation .
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty gp:hasItem ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass gp:Attribute-
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty gp:hasItem ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+>
+                             ] ;
+             owl:disjointWith gp:Gradual_Pattern ,
+                              gp:Variation .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute-
@@ -92,10 +94,7 @@ gp:Attribute- rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( gp:Gradual_Item
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty gp:hasVariation ;
-                                                           owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                owl:oneOf ( <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#->
-                                                                                          )
-                                                                              ]
+                                                           owl:someValuesFrom <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#->
                                                          ]
                                                        ) ;
                                     rdf:type owl:Class
@@ -104,12 +103,14 @@ gp:Attribute- rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item
 gp:Gradual_Item rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty gp:hasVariation ;
-                                  owl:someValuesFrom gp:Variation
-                                ] ;
-                owl:disjointWith gp:Gradual_Pattern ,
-                                 gp:Variation .
+                rdfs:subClassOf [ owl:intersectionOf ( gp:Attribute
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty gp:hasVariation ;
+                                                         owl:someValuesFrom gp:Variation
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern
@@ -118,7 +119,22 @@ gp:Gradual_Pattern rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Variation
-gp:Variation rdf:type owl:Class .
+gp:Variation rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:unionOf ( <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+>
+                                                 <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#->
+                                               )
+                                 ] .
+
+
+###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+> rdf:type owl:Class ;
+                                                             rdfs:subClassOf gp:Variation .
+
+
+###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-> rdf:type owl:Class ;
+                                                             rdfs:subClassOf gp:Variation .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+
@@ -126,10 +142,7 @@ gp:Variation rdf:type owl:Class .
                                                                       owl:equivalentClass [ owl:intersectionOf ( gp:Gradual_Item
                                                                                                                  [ rdf:type owl:Restriction ;
                                                                                                                    owl:onProperty gp:hasVariation ;
-                                                                                                                   owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                                        owl:oneOf ( <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+>
-                                                                                                                                                  )
-                                                                                                                                      ]
+                                                                                                                   owl:someValuesFrom <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+>
                                                                                                                  ]
                                                                                                                ) ;
                                                                                             rdf:type owl:Class
@@ -141,55 +154,40 @@ gp:Variation rdf:type owl:Class .
 #################################################################
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A
-gp:A rdf:type owl:NamedIndividual ,
-              gp:Attribute .
+gp:A rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A-
-gp:A- rdf:type owl:NamedIndividual ;
-      gp:hasVariation <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-> .
+gp:A- rdf:type owl:NamedIndividual ,
+               gp:Attribute- ;
+      gp:isItemOf gp:A .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B
-gp:B rdf:type owl:NamedIndividual ,
-              gp:Attribute .
+gp:B rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-
-gp:B- rdf:type owl:NamedIndividual ;
-      gp:hasVariation <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-> ;
+gp:B- rdf:type owl:NamedIndividual ,
+               gp:Attribute- ;
       gp:isItemOf gp:B ;
       gp:hasSupportGI "1.0"^^xsd:float .
 
 
-###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B--
-gp:B-- rdf:type owl:NamedIndividual .
-
-
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C
-gp:C rdf:type owl:NamedIndividual ,
-              gp:Attribute .
+gp:C rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C-
-gp:C- rdf:type owl:NamedIndividual ;
-      gp:hasVariation <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-> ;
+gp:C- rdf:type owl:NamedIndividual ,
+               gp:Attribute- ;
       gp:hasSupportGI "0.51"^^xsd:float .
 
 
-###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+> rdf:type owl:NamedIndividual ,
-                                                                      gp:Variation .
-
-
-###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-> rdf:type owl:NamedIndividual ,
-                                                                      gp:Variation .
-
-
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+> rdf:type owl:NamedIndividual ;
-                                                              gp:hasVariation <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+> .
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+> ;
+                                                              gp:isItemOf gp:A .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-
@@ -199,15 +197,15 @@ gp:C- rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+> rdf:type owl:NamedIndividual ;
-                                                              gp:hasVariation <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+> ;
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+> ;
                                                               gp:isItemOf gp:B ;
                                                               gp:hasSupportGI "0.75"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C+
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C+> rdf:type owl:NamedIndividual ;
-                                                              gp:hasVariation <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+> ;
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C+> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+> ;
                                                               gp:hasSupportGI "0.57"^^xsd:float .
 
 
@@ -225,6 +223,17 @@ gp:C- rdf:type owl:NamedIndividual ;
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( gp:A
                         gp:C
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( gp:A-
+                        gp:B-
+                        gp:C-
+                        <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+>
+                        <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+>
+                        <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C+>
                       )
 ] .
 
