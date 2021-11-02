@@ -88,6 +88,28 @@ gp:Attribute rdf:type owl:Class ;
              owl:disjointWith gp:Gradual_Pattern ,
                               gp:Variation .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource gp:Attribute ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty gp:hasItem ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass gp:Attribute-
+                       ] ;
+   rdfs:comment "Cardinality: restricts only 1 GI- to be the item of the attribute."
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource gp:Attribute ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty gp:hasItem ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+>
+                       ] ;
+   rdfs:comment "Cardinality: restricts only 1 GI- to be the item of the attribute."
+ ] .
+
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute-
 gp:Attribute- rdf:type owl:Class ;
