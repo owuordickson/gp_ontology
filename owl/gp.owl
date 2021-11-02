@@ -86,7 +86,9 @@ gp:Attribute rdf:type owl:Class ;
                                owl:onClass <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+>
                              ] ;
              owl:disjointWith gp:Gradual_Pattern ,
-                              gp:Variation .
+                              gp:Variation ;
+             rdfs:comment "It can only be used to create exactly 1 Gradual Item with - variation and exactly 1 Gradual Item with + variation." ,
+                          "Retrieved from a data set (i.e., column or feature). It holds a set of objects (or rows)." .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource gp:Attribute ;
@@ -134,7 +136,7 @@ gp:Gradual_Item rdf:type owl:Class ;
                                                      ) ;
                                   rdf:type owl:Class
                                 ] ;
-                rdfs:comment "GI is a subclass of (Attribute and has a Variation)" .
+                rdfs:comment "GI is a subclass of (Attribute and has a Variation - or +)" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern
@@ -156,12 +158,14 @@ This is a property of a Gradual Item.""" .
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+
 <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+> rdf:type owl:Class ;
-                                                             rdfs:subClassOf gp:Variation .
+                                                             rdfs:subClassOf gp:Variation ;
+                                                             rdfs:comment "Implies increasing (used to describe a Gradual Item whose variation is increasing)" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-
 <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#-> rdf:type owl:Class ;
-                                                             rdfs:subClassOf gp:Variation .
+                                                             rdfs:subClassOf gp:Variation ;
+                                                             rdfs:comment "Implies decreasing (used to describe a Gradual Item whose variation is decreasing)" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+
