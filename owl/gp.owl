@@ -120,7 +120,8 @@ gp:Attribute- rdf:type owl:Class ;
                                                          ]
                                                        ) ;
                                     rdf:type owl:Class
-                                  ] .
+                                  ] ;
+              rdfs:comment "Equivalent to a Gradual Item and has Variation -" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Item
@@ -132,7 +133,8 @@ gp:Gradual_Item rdf:type owl:Class ;
                                                        ]
                                                      ) ;
                                   rdf:type owl:Class
-                                ] .
+                                ] ;
+                rdfs:comment "GI is a subclass of (Attribute and has a Variation)" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern
@@ -146,7 +148,10 @@ gp:Variation rdf:type owl:Class ;
                                    owl:unionOf ( <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+>
                                                  <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#->
                                                )
-                                 ] .
+                                 ] ;
+             rdfs:comment """either + or - (i.e., decreasing or increasing).
+
+This is a property of a Gradual Item.""" .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#+
@@ -168,7 +173,8 @@ gp:Variation rdf:type owl:Class ;
                                                                                                                  ]
                                                                                                                ) ;
                                                                                             rdf:type owl:Class
-                                                                                          ] .
+                                                                                          ] ;
+                                                                      rdfs:comment "Equivalent to a Gradual Item and has Variation +" .
 
 
 #################################################################
