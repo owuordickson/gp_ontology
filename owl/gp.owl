@@ -66,6 +66,7 @@ gp:hasSupportGI rdf:type owl:DatatypeProperty ;
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasSupportGP
 gp:hasSupportGP rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf gp:hasSupport ;
+                rdfs:domain gp:Gradual_Pattern ;
                 rdfs:range xsd:float .
 
 
@@ -223,8 +224,7 @@ gp:C- rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-> rdf:type owl:NamedIndividual ,
-                                                                         gp:Gradual_Pattern ;
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-> rdf:type owl:NamedIndividual ;
                                                                 gp:hasSupportGP "0.5"^^xsd:float .
 
 
