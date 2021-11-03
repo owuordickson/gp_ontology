@@ -216,6 +216,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A">
         <rdf:type rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute"/>
+        <hasItem rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A-"/>
+        <hasItem rdf:resource="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+"/>
     </owl:NamedIndividual>
     
 
@@ -343,6 +345,17 @@
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A-"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C-"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C+"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
