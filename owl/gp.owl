@@ -225,7 +225,8 @@ gp:C- rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-> rdf:type owl:NamedIndividual ;
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#A+B-> rdf:type owl:NamedIndividual ,
+                                                                         gp:Gradual_Pattern ;
                                                                 gp:hasSupportGP "0.5"^^xsd:float .
 
 
@@ -237,8 +238,7 @@ gp:C- rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-C+
-<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-C+> rdf:type owl:NamedIndividual ,
-                                                                         gp:Gradual_Pattern ;
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B-C+> rdf:type owl:NamedIndividual ;
                                                                 gp:hasSupportGP "0.68"^^xsd:float .
 
 
