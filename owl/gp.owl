@@ -15,7 +15,9 @@
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#composedOf
 gp:composedOf rdf:type owl:ObjectProperty ;
-              owl:inverseOf gp:isPartOf .
+              owl:inverseOf gp:isPartOf ;
+              rdfs:domain gp:Gradual_Pattern ;
+              rdfs:range gp:Gradual_Item .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#hasItem
@@ -142,6 +144,11 @@ gp:Gradual_Item rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Gradual_Pattern
 gp:Gradual_Pattern rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty gp:composedOf ;
+                                     owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                     owl:onClass gp:Gradual_Item
+                                   ] ;
                    owl:disjointWith gp:Variation .
 
 
@@ -233,6 +240,11 @@ gp:C- rdf:type owl:NamedIndividual ,
                                                                        <http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#Attribute+> ;
                                                               gp:isItemOf gp:B ;
                                                               gp:hasSupportGI "0.75"^^xsd:float .
+
+
+###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+B-A-
+<http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#B+B-A-> rdf:type owl:NamedIndividual ,
+                                                                           gp:Gradual_Pattern .
 
 
 ###  http://www.semanticweb.org/owuorjnr/ontologies/2021/9/gp#C+
